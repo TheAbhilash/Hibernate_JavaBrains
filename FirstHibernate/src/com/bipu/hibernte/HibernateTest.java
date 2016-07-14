@@ -1,5 +1,7 @@
 package com.bipu.hibernte;
 
+import java.util.Date;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -12,8 +14,12 @@ public class HibernateTest {
 		// TODO Auto-generated method stub
 
 		UserDetails userDetails = new UserDetails();
-		userDetails.setUserId(3);
-		userDetails.setUserName("Third User");
+		userDetails.setUserId(1);
+		userDetails.setUserName("First User");
+		userDetails.setJoinedDate(new Date());
+		userDetails.setAddress("First User's address");
+		userDetails.setDescription("Description of First User");
+		
 		
 		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();
